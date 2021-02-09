@@ -18,7 +18,7 @@ pipeline {
         }
         stage("Update Deployment"){
             steps{
-                sh "kubectl set image deploy/react-app react-app=cr33dx/nanop:$env.BUILD_ID
+                sh "kubectl set image deploy/react-app react-app=cr33dx/nanop:$env.BUILD_ID"
            }        
        }        
     }
