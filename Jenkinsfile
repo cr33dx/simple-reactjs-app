@@ -16,10 +16,10 @@ pipeline {
                 sh "sudo docker push cr33dx/nanop:latest && docker push cr33dx/nanop:$env.BUILD_ID"                
             }
         }
-//        stage("Update Deployment"){
-//            steps{
-//                sh "KUBECONFIG=/etc/kube/staging kubectl set image cronjob/scraper scraper=cr33dx/greendeck:$env.BUILD_ID
-//           }        
-//        }        
+        stage("Update Deployment"){
+            steps{
+                sh "kubectl set image deploy/react-app react-app=cr33dx/nanop:$env.BUILD_ID
+           }        
+       }        
     }
 }
