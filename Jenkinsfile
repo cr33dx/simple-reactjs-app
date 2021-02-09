@@ -8,12 +8,12 @@ pipeline {
       }
         stage("Docker Build") {
             steps {
-                 sh "docker build -t cr33dx/nanop:$env.BUILD_ID -t cr33dx/nanop:latest ."
+                 sh "sudo docker build -t cr33dx/nanop:$env.BUILD_ID -t cr33dx/nanop:latest ."
             }
         }
         stage("Docker Push") {
             steps {
-                sh "docker push cr33dx/nanop:latest && docker push cr33dx/nanop:$env.BUILD_ID"                
+                sh "sudo docker push cr33dx/nanop:latest && docker push cr33dx/nanop:$env.BUILD_ID"                
             }
         }
 //        stage("Update Deployment"){
