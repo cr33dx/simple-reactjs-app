@@ -13,7 +13,7 @@ pipeline {
         }
         stage("Docker Push") {
             steps {
-                sh "sudo docker push cr33dx/nanop:latest && docker push cr33dx/nanop:$env.BUILD_ID"                
+                sh "docker push cr33dx/nanop:latest && docker push cr33dx/nanop:$env.BUILD_ID"                
             }
         }
         stage("Update Deployment"){
