@@ -6,4 +6,4 @@ RUN npm i
 
 COPY . .
 
-RUN ["npm", "start"]
+ENTRYPOINT ["npm", "start"]
